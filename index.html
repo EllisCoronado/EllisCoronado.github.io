@@ -1,0 +1,624 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>About Me</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/base/jquery-ui.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/aboutme.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+<script src="jquery-1.12.4.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="skrollr.min.js"></script>
+<script src="wwb16.min.js"></script>
+<script>   
+   $(document).ready(function()
+   {
+      $('#reviewsImage1').addClass('visibility-hidden');
+      $('#portfolio-image2').addClass('visibility-hidden');
+      $('#reviewsImage1').addClass('visibility-hidden');
+      $('#portfolio-image2').addClass('visibility-hidden');
+      $('#reviewsImage1').addClass('visibility-hidden');
+      $('#portfolio-image2').addClass('visibility-hidden');
+      $('#reviewsImage1').addClass('visibility-hidden');
+      $('#portfolio-image2').addClass('visibility-hidden');
+      $("a[href*='#header']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_header').offset().top }, 600, 'easeOutQuad');
+      });
+      $("a[href*='#intro']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_intro').offset().top-68 }, 600, 'easeOutCirc');
+      });
+      $("a[href*='#skills']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_skills').offset().top-68 }, 600, 'easeOutQuad');
+      });
+      $("a[href*='#services']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_services').offset().top-68 }, 600, 'easeOutQuad');
+      });
+      function onScrollservices()
+      {
+         var $obj = $("#wb_services");
+         if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+         {
+            $obj.addClass("in-viewport");
+            AnimateCss('reviewsImage1', 'animate-fade-in-up', 0, 1000);
+            AnimateCss('portfolio-image2', 'animate-fade-in-up', 500, 1000);
+         }
+      }
+      onScrollservices();
+      $(window).scroll(function(event)
+      {
+         onScrollservices();
+      });
+      $("a[href*='#skillsInner']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_skillsInner').offset().top-88 }, 600, 'easeOutCirc');
+      });
+      function skrollrInit()
+      {
+         skrollr.init({forceHeight: false, mobileCheck: function() { return false; }, smoothScrolling: false});
+      }
+      skrollrInit();
+      $("a[href*='#servicesLayoutGrid1']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_servicesLayoutGrid1').offset().top-68 }, 600, 'easeOutCirc');
+      });
+      $("a[href*='#servicesLayoutGrid2']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_servicesLayoutGrid2').offset().top-88 }, 600, 'easeOutCirc');
+      });
+      $("a[href*='#portfolio']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_portfolio').offset().top-68 }, 600, 'easeOutQuad');
+      });
+      function onScrollportfolio()
+      {
+         var $obj = $("#wb_portfolio");
+         if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+         {
+            $obj.addClass("in-viewport");
+            AnimateCss('reviewsImage1', 'animate-fade-in-up', 0, 1000);
+            AnimateCss('portfolio-image2', 'animate-fade-in-up', 500, 1000);
+         }
+      }
+      onScrollportfolio();
+      $(window).scroll(function(event)
+      {
+         onScrollportfolio();
+      });
+      $("a[href*='#portfolioLayoutGrid1']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_portfolioLayoutGrid1').offset().top-88 }, 600, 'easeOutCirc');
+      });
+      function onScrollportfolioLayoutGrid1()
+      {
+         var $obj = $("#wb_portfolioLayoutGrid1");
+         if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+         {
+            $obj.addClass("in-viewport");
+            AnimateCss('reviewsImage1', 'animate-fade-in-up', 0, 1000);
+            AnimateCss('portfolio-image2', 'animate-fade-in-up', 500, 1000);
+         }
+      }
+      onScrollportfolioLayoutGrid1();
+      $(window).scroll(function(event)
+      {
+         onScrollportfolioLayoutGrid1();
+      });
+      $("a[href*='#portfolioLayoutGrid2']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_portfolioLayoutGrid2').offset().top-88 }, 600, 'easeOutCirc');
+      });
+      function onScrollportfolioLayoutGrid2()
+      {
+         var $obj = $("#wb_portfolioLayoutGrid2");
+         if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+         {
+            $obj.addClass("in-viewport");
+            AnimateCss('reviewsImage1', 'animate-fade-in-up', 0, 1000);
+            AnimateCss('portfolio-image2', 'animate-fade-in-up', 500, 1000);
+         }
+      }
+      onScrollportfolioLayoutGrid2();
+      $(window).scroll(function(event)
+      {
+         onScrollportfolioLayoutGrid2();
+      });
+      function aspectRatioportfolioRollOverText1()
+      {
+         var $obj = $("#portfolioRollOverText1");
+         var height = $obj.width() / 1.03;
+         if (height == 0)
+         {
+            setTimeout(function(){ aspectRatioportfolioRollOverText1() }, 250);
+         }
+         else
+         {
+            $obj.css('height', height + 'px');
+         }
+      }
+      $(window).resize(function()
+      {
+         aspectRatioportfolioRollOverText1();
+      });
+      aspectRatioportfolioRollOverText1();
+      function aspectRatioportfolioRollOverText2()
+      {
+         var $obj = $("#portfolioRollOverText2");
+         var height = $obj.width() / 1;
+         if (height == 0)
+         {
+            setTimeout(function(){ aspectRatioportfolioRollOverText2() }, 250);
+         }
+         else
+         {
+            $obj.css('height', height + 'px');
+         }
+      }
+      $(window).resize(function()
+      {
+         aspectRatioportfolioRollOverText2();
+      });
+      aspectRatioportfolioRollOverText2();
+      function aspectRatioportfolioRollOverText3()
+      {
+         var $obj = $("#portfolioRollOverText3");
+         var height = $obj.width() / 1.38;
+         if (height == 0)
+         {
+            setTimeout(function(){ aspectRatioportfolioRollOverText3() }, 250);
+         }
+         else
+         {
+            $obj.css('height', height + 'px');
+         }
+      }
+      $(window).resize(function()
+      {
+         aspectRatioportfolioRollOverText3();
+      });
+      aspectRatioportfolioRollOverText3();
+      function aspectRatioportfolioRollOverText4()
+      {
+         var $obj = $("#portfolioRollOverText4");
+         var height = $obj.width() / 1;
+         if (height == 0)
+         {
+            setTimeout(function(){ aspectRatioportfolioRollOverText4() }, 250);
+         }
+         else
+         {
+            $obj.css('height', height + 'px');
+         }
+      }
+      $(window).resize(function()
+      {
+         aspectRatioportfolioRollOverText4();
+      });
+      aspectRatioportfolioRollOverText4();
+      function aspectRatioportfolioRollOverText5()
+      {
+         var $obj = $("#portfolioRollOverText5");
+         var height = $obj.width() / 1;
+         if (height == 0)
+         {
+            setTimeout(function(){ aspectRatioportfolioRollOverText5() }, 250);
+         }
+         else
+         {
+            $obj.css('height', height + 'px');
+         }
+      }
+      $(window).resize(function()
+      {
+         aspectRatioportfolioRollOverText5();
+      });
+      aspectRatioportfolioRollOverText5();
+      function aspectRatioportfolioRollOverText6()
+      {
+         var $obj = $("#portfolioRollOverText6");
+         var height = $obj.width() / 1.38;
+         if (height == 0)
+         {
+            setTimeout(function(){ aspectRatioportfolioRollOverText6() }, 250);
+         }
+         else
+         {
+            $obj.css('height', height + 'px');
+         }
+      }
+      $(window).resize(function()
+      {
+         aspectRatioportfolioRollOverText6();
+      });
+      aspectRatioportfolioRollOverText6();
+      $("#skillsProgressbar1").progressbar(
+      {
+         value: 40,
+         change: function() 
+         {
+            $("#skillsProgressbar1-label").text($(this).progressbar('value') + '%');
+         }
+      });
+      $("#skillsProgressbar2").progressbar(
+      {
+         value: 20,
+         change: function() 
+         {
+            $("#skillsProgressbar2-label").text($(this).progressbar('value') + '%');
+         }
+      });
+      $("#skillsProgressbar3").progressbar(
+      {
+         value: 30,
+         change: function() 
+         {
+            $("#skillsProgressbar3-label").text($(this).progressbar('value') + '%');
+         }
+      });
+      $("#skillsProgressbar4").progressbar(
+      {
+         value: 10,
+         change: function() 
+         {
+            $("#skillsProgressbar4-label").text($(this).progressbar('value') + '%');
+         }
+      });
+      $("a[href*='#contact']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_contact').offset().top-68 }, 600, 'easeOutQuad');
+      });
+      $("a[href*='#contactForm']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_contactForm').offset().top-88 }, 600, 'easeOutCirc');
+      });
+      var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+      if (iOS)
+      {
+         $('#wb_contact').css('background-attachment', 'scroll');
+      }
+   });
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet">
+<script>   
+   $(document).ready(function()
+   {
+      var $progressbars = $('.ui-progressbar');
+      
+      $progressbars.each(function() 
+      {
+        var $obj = $(this);
+        $obj.data('value', $obj.progressbar('option', 'value'));
+        $obj.data('done', false);
+        $obj.progressbar('option', 'value', 0);
+      });
+      $(window).bind('scroll', function() 
+      {
+         $progressbars.each(function() 
+         {
+            var $obj = $(this);
+            if (!$obj.data('done') && $(window).scrollTop() + $(window).height() >= $obj.offset().top) 
+            {
+               $obj.data('done', true);
+               $obj.animate({scroll: 1}, 
+               { 
+                  duration: 3000, 
+                  step: function(now) 
+                  {
+                     var $obj = $(this);
+                     var val = Math.round($obj.data('value') * now);
+                     $obj.progressbar('option', 'value', val);
+                  }
+               });
+            }
+         });
+      }).triggerHandler('scroll');
+   });
+</script>
+</head>
+<body>
+   <div id="wb_header">
+      <div id="header">
+         <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-2">
+               <div id="wb_aboutMeMenu">
+                  <ul id="aboutMeMenu" role="menubar" class="nav">
+                     <li class="nav-item firstmain"><a role="menuitem" class="nav-link" href="#skillsInner" target="_self">ABOUT</a>
+                     </li>
+                     <li class="nav-item"><a role="menuitem" class="nav-link" href="#services" target="_self">EXPERTISE</a>
+                     </li>
+                     <li class="nav-item"><a role="menuitem" class="nav-link" href="#portfolio" target="_self">REFERENCES</a>
+                     </li>
+                     <li class="nav-item"><a role="menuitem" class="nav-link" href="#contact" target="_self">CONTACT</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_intro">
+      <div id="intro">
+         <div class="col-1">
+            <div id="wb_homeText">
+               <p style="font-family:Arial;font-size:32px;line-height:36px;font-weight:bold;"><span style="font-family:Palatino Linotype;font-size:48px;line-height:64.5px;">Ellis Coronado</span></p>
+               <p style="font-family:Arial;font-size:15px;line-height:16.5px;">&nbsp;</p>
+               <p style="font-family:Arial;font-size:16px;line-height:18px;"><span style="font-family:Palatino Linotype;font-size:27px;line-height:35.5px;font-weight:bold;">IT Consultant</span></p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_skills">
+      <div id="skills">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_skillsInner">
+                     <div id="skillsInner">
+                        <div class="row">
+                           <div class="col-1">
+                              <div class="col-1-padding">
+                                 <div id="wb_skillsHeading">
+                                    <p style="margin:6.67px 0 6.67px 0;font-family:Arial;font-size:16px;line-height:18px;font-weight:bold;"><span style="background-color:#FFFFFF;font-family:Palatino Linotype;font-size:24px;line-height:32px;">Professional Time Spent Last 5 Years</span></p>
+                                 </div>
+                                 <label for="" id="skillsLabel1">In-house Developed Logistics</label>
+                                 <div id="skillsProgressbar1">
+                                    <div id="skillsProgressbar1-label">40%</div>
+                                 </div>
+                                 <label for="" id="skillsLabel2">Odoo - Open ERP</label>
+                                 <div id="skillsProgressbar2">
+                                    <div id="skillsProgressbar2-label">20%</div>
+                                 </div>
+                                 <label for="" id="skillsLabel3">WordPress</label>
+                                 <div id="skillsProgressbar3">
+                                    <div id="skillsProgressbar3-label">30%</div>
+                                 </div>
+                                 <label for="" id="skillsLabel4">Network Administration</label>
+                                 <div id="skillsProgressbar4">
+                                    <div id="skillsProgressbar4-label">10%</div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-2">
+                              <div class="col-2-padding">
+                                 <div id="wb_skillsText">
+                                    <p style="margin:6.67px 0 6.67px 0;font-weight:bold;"><span style="background-color:#FFFFFF;">About Me</span></p>
+                                    <p style="font-size:16px;font-weight:bold;line-height:21.6px;">&nbsp;</p>
+                                    <p style="font-size:16px;line-height:21.6px;"><span style="background-color:#FFFFFF;">Based in Singapore, I am a (native) English-speaking IT entrepreneur servicing mainly for small to medium-sized companies in Southeast-Asia. At the same time, I can assist European customers remotely.</span></p>
+                                    <p style="font-size:16px;line-height:21.6px;">&nbsp;</p>
+                                    <p style="font-size:16px;line-height:21.6px;"><span style="background-color:#FFFFFF;">My professional realizations span different industries: logistics, garment manufacturing, real estate, travel agents and guesthouses, corporate events and e-Commerce.</span></p>
+                                    <p style="font-family:Arial;font-size:16px;line-height:21.6px;">&nbsp;</p>
+                                    <p style="font-family:Arial;font-size:16px;line-height:21.6px;">&nbsp;</p>
+                                    <p style="font-family:Arial;font-size:16px;font-weight:bold;line-height:21.6px;">&nbsp;</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_services">
+      <div id="services">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_servicesHeading">
+                     <h1 id="servicesHeading">Fields of Expertise</h1>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="upStickyLayer">
+      <div id="wb_up-arrow">
+         <a href="#intro"><div id="up-arrow"><i class="fa fa-angle-up"></i></div></a></div>
+   </div>
+   <div id="wb_servicesLayoutGrid1">
+      <div id="servicesLayoutGrid1">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_servicesCard1" data-100-bottom="opacity:0.0;" data-bottom="opacity:1.0;">
+                     <div id="servicesCard1-card-body">
+                        <div id="servicesCard1-card-item0"><i class="fa fa-globe"></i></div>
+                        <div id="servicesCard1-card-item1"><h3>Global Logistics</h3></div>
+                        <div id="servicesCard1-card-item2">• System Setup<br>• Template Modification<br>• Rating Configuration<br>• Report Modelling<br>• Security Management<br>• SOP Documentation</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-2">
+               <div class="col-2-padding">
+                  <div id="wb_servicesCard2" data-100-bottom="opacity:0.0;" data-bottom="opacity:1.0;">
+                     <div id="servicesCard2-card-body">
+                        <div id="servicesCard2-card-item0"><i class="fa fa-users"></i></div>
+                        <div id="servicesCard2-card-item1"><h3>Odoo</h3></div>
+                        <div id="servicesCard2-card-item2">• Implementation<br>• Coordination <br>• Accounting Setup<br>• Automated Payroll Configuration<br>• User Security Management<br>• End-user Training</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_servicesLayoutGrid2">
+      <div id="servicesLayoutGrid2">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_servicesCard4" data-100-bottom="opacity:0.0;" data--500-bottom="opacity:1.0;">
+                     <div id="servicesCard4-card-body">
+                        <div id="servicesCard4-card-item0"><i class="fa fa-wordpress"></i></div>
+                        <div id="servicesCard4-card-item1"><h3>WordPress</h3></div>
+                        <div id="servicesCard4-card-item2">• Domain and Hosting Setup<br>• Theme Implementation<br>• Plugin Maintenance<br>• SEO Analysis<br>• Content Creation<br>• Troubleshooting</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-2">
+               <div class="col-2-padding">
+                  <div id="wb_servicesCard5" data-100-bottom="opacity:0.0;" data--500-bottom="opacity:1.0;">
+                     <div id="servicesCard5-card-body">
+                        <div id="servicesCard5-card-item0"><i class="fa fa-windows"></i></div>
+                        <div id="servicesCard5-card-item1"><h3>Network Administration</h3></div>
+                        <div id="servicesCard5-card-item2">• Client-Server Network<br>• Maintenance<br>• Mail Server Admin<br>• Server Backups<br>• Firewall and VPN<br>• End-user Assistance</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_portfolio">
+      <div id="portfolio">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_portfolioHeading">
+                     <h1 id="portfolioHeading">References</h1>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_portfolioLayoutGrid1">
+      <div id="portfolioLayoutGrid1">
+         <div class="col-1">
+            <div class="col-1-padding">
+               <div id="portfolioRollOverText1">
+                  <img alt="Vytal Logistics" class="image" src="images/Vytal_Logistics.jpg">
+                  <div class="caption">
+                     <div class="title">Vytal Logistics</div>
+                     <p class="description">Support Services Manager</p>
+                     <a class="link" href="https://cargowise.com/" target="_blank">More information</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-2">
+            <div class="col-2-padding">
+               <div id="portfolioRollOverText2">
+                  <img alt="Focal Support" class="image" src="images/Focal_Support.jpg">
+                  <div class="caption">
+                     <div class="title">Focal Support</div>
+                     <p class="description">IT Manager</p>
+                     <a class="link" href="https://www.canva.com/" target="_blank">More information</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_portfolioLayoutGrid2">
+      <div id="portfolioLayoutGrid2">
+         <div class="col-1">
+            <div class="col-1-padding">
+               <div id="portfolioRollOverText4">
+                  <img alt="Freelance" class="image" src="images/mbr-1-712x534.jpg">
+                  <div class="caption">
+                     <div class="title">Freelance</div>
+                     <p class="description">Web Designer</p>
+                     <a class="link" href="https://wordpress.org/" target="_blank">More information</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-2">
+            <div class="col-2-padding">
+               <div id="portfolioRollOverText5">
+                  <img alt="Intres" class="image" src="images/Intres.jpg">
+                  <div class="caption">
+                     <div class="title">Intres</div>
+                     <p class="description">Network Administrator</p>
+                     <a class="link" href="https://www.techopedia.com/definition/8547/network-administration" target="_blank">More information</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_contact">
+      <div id="contact-overlay"></div>
+      <div id="contact">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_contactForm">
+                     <div id="contactForm">
+                        <div class="row">
+                           <div class="col-1">
+                              <div class="col-1-padding">
+                                 <div id="wb_contactText1">
+                                    <p style="margin:6.67px 0 6.67px 0;font-family:Arial;font-size:16px;line-height:18px;font-weight:bold;"><span style="background-color:#FFFFFF;font-family:Palatino Linotype;font-size:24px;line-height:32px;">Send A Message</span></p>
+                                 </div>
+                                 <input type="text" id="contactName" name="name" value="" spellcheck="false" placeholder="Name">
+                                 <input type="text" id="contactEmail" name="email" value="" spellcheck="false" placeholder="Email">
+                                 <input type="text" id="contactSubject" name="subject" value="" spellcheck="false" placeholder="Subject">
+                                 <textarea name="message" id="contactMessage" rows="5" cols="39" autocomplete="off" spellcheck="false" placeholder="Message"></textarea>
+                                 <a id="contactButton" href="mailto:investigate.aspects@slmail.me">Submit</a>
+                              </div>
+                           </div>
+                           <div class="col-2">
+                              <div class="col-2-padding">
+                                 <div id="wb_contactText2">
+                                    <p style="margin:6.67px 0 6.67px 0;font-family:Arial;font-weight:bold;"><span style="background-color:#FFFFFF;font-family:Palatino Linotype;">Contact Me</span></p>
+                                    <p style="font-size:16px;line-height:21.6px;">&nbsp;</p>
+                                    <p style="font-size:16px;line-height:21.6px;"><span style="background-color:#FFFFFF;">Let me know if you would like more information about my IT consulting services.</span></p>
+                                    <p style="font-size:16px;line-height:21.6px;">&nbsp;</p>
+                                 </div>
+                                 <div id="wb_contactIcon1">
+                                    <a href="https://www.linkedin.com/" target="_blank"><div id="contactIcon1"><i class="fa fa-linkedin-square"></i></div></a>
+                                 </div>
+                                 <div id="wb_contactIcon2">
+                                    <a href="https://twitter.com/" target="_blank"><div id="contactIcon2"><i class="fa fa-twitter"></i></div></a>
+                                 </div>
+                                 <div id="wb_contactIcon3">
+                                    <a href="https://www.pinterest.com/" target="_blank"><div id="contactIcon3"><i class="fa fa-pinterest-p"></i></div></a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_footer">
+      <div id="footer">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_contactText3">
+                  <p><span style="background-color:#0078FF;">Copyright © 2021 - Ellis Coronado -&nbsp; All Rights Reserved</span></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
